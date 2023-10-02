@@ -12,3 +12,10 @@ set -x
 
 #Instalamos el servidor
 sudo apt install apache2 -y
+
+#Comprobamos el estado del Apache
+
+sudo systemctl status apache2
+
+#sudo systemctl stop apache2
+#sudo systemctl restart apache2
