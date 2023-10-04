@@ -19,3 +19,7 @@ sudo systemctl status apache2
 
 #sudo systemctl stop apache2
 #sudo systemctl restart apache2
+
+#Instalamos MySql para gestionar las bases de datos.
+
+sudo apt install mysql-server -y
