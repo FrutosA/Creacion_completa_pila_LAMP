@@ -15,6 +15,7 @@ APP_PASSWORD=contraseña
 sudo update -y
 
 #Actualizamos los paquetes:
+
 sudo upgrade -y
 
 #Configuramos las respuestas de las preguntas durante la instalación de Phpmyadmin:
@@ -109,4 +110,3 @@ cp ../conf/000-default-htaccess.conf /etc/apache2/sites-avariable/000-default.co
 
 
 sudo systemctl restart apache2.service
-sudo systemctl start apache2.service
