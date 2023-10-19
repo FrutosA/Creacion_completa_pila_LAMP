@@ -1,26 +1,44 @@
 # Creacion_completa_pila_LAMP
 
-## Creación de una maquina en un laboratorio de AWS
+## Creación de una maquina en un laboratorio de AWS.
 
 1º Lo primero que tenemos que hacer es Lanzar la instancia.
 
 ![](imagenes/captura_1.png)
 
-2º Seleccionamos el S.O., que en este caso es Ubuntu:
+2º Seleccionamos el S.O., que en este caso es Ubuntu.
 
 ![](imagenes/captura_2.png)
 
-3º Elegimos el tipo de instancia:
+3º Elegimos el tipo de instancia.
 
 ![](imagenes/captura_3.png)
 
-4º Seleccionamos el par de claves que nosotros ya hemos descargado antes de iniciar el laboratorio. Nosotros la renombramos y seleccionamos Vockey.pem
+4º Seleccionamos el par de claves que nosotros ya hemos descargado antes de iniciar el laboratorio. Nosotros la renombramos y seleccionamos Vockey.pem (la cual tendrá que tener los permisos cambiados).
 
 ![](imagenes/captura_4.png)
 
 5º  Al grupo de seguridad le añadimos todos los servicios y la lanzamos:
 
 ![](imagenes/captura_5.png)
+
+### Asignar una Ip a nuestra instancia.
+
+1º Nos vamos a *Direcciones IP estaticas* y asignamos una nueva IP elastica:
+
+![](imagenes/captura_6.png)
+
+2º Asignamos la IP
+
+![](imagenes/captura_7.png)
+
+3º Una vez tenemos la IP, solo queda Asignarle a esta una instancia.
+
+![](imagenes/captura_8.png)
+
+4º Seleccionamos la instancia y la asociamos. Así cada vez que reiniciemos el laboriatorio no cambiará la IP de la instancia.
+
+![](imagenes/captura_9.png)
 
 
 ## Instalación de la pila LAMP
