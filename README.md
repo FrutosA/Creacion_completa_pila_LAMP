@@ -25,7 +25,7 @@
 
 ## Instalación de la pila LAMP
 
-Antes de empezar, hay que recordar que queremos ver la ejecución de todos los comandos (set -x) y actualizamos los repositorios y paquetes.
+Antes de empezar, hay que recordar que queremos ver la ejecución de todos los comandos **(set -x)** y actualizamos los repositorios y paquetes. **(sudo apt update)** \ **(sudo upgrade -y)**
 
 1º Instalamos y actualiamos el servidor WEB Apache 2.4
 
