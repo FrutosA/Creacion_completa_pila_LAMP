@@ -255,3 +255,5 @@ cp ../htaccess/htaccess /var/html/stats/.htaccess
 sudo systemctl restart apache2.service
 
  ````
+
+ ![](imagenes/captura_10.png)
