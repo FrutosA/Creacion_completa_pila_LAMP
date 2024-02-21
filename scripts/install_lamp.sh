@@ -15,7 +15,7 @@ sudo apt install apache2 -y
 
 #Comprobamos el estado del Apache
 
-sudo systemctl status apache2
+#sudo systemctl status apache2
 
 #sudo systemctl stop apache2
 #sudo systemctl restart apache2
@@ -28,9 +28,13 @@ sudo apt install mysql-server -y
 
 sudo apt install php libapache2-mod-php php-mysql -y
 
-# Copiar el directorio de configuración de Apache
 
-cp ../conf/000-default.conf /etc/apache2/sites-available
+
+# Modificamos el propietario y el grupo del directorio /var/www/html
+
+sudo chown -R www-data:www-data /var/www/html/*
+
+sudo chown -R www-data:www-data /var/www/html
 
 #Reiniciamos el servicio Apache:
 
@@ -40,6 +44,9 @@ sudo systemctl restart apache2
 
 cp ../php/index.php /var/www/html
 
-# Modificamos el propietario y el grupo del directorio /var/www/html
+# Copiar el directorio de configuración de Apache
 
-sudo chown -R www-data:www-data /var/www/html
+sudo chown -R www-data:www-data /etc/apache2/sites-available/000-default.conf
+
+cp ../conf/000-default.conf /etc/apache2/sites-available
+
