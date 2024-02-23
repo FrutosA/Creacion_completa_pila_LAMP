@@ -42,11 +42,10 @@ sudo systemctl restart apache2
 
 # Copiamos el archivo de prueva de PHP
 
-cp ../php/index.php /var/www/html
+cp ../PHP/index.php /var/www/html
 
 # Copiar el directorio de configuración de Apache
 
+cp ../conf/000-default.conf /etc/apache2/sites-available/000-default.conf
+
 sudo chown -R www-data:www-data /etc/apache2/sites-available/000-default.conf
-
-cp ../conf/000-default.conf /etc/apache2/sites-available
-

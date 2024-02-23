@@ -6,9 +6,7 @@ set -x
 #-----------------------------------------------------
 #Configuramos la variables :
 
-PHPMYADMIN_APP_PASSWORD=1003
-APP_USER=andres
-APP_PASSWORD=1003
+source .env
 #-----------------------------------------------------
 
 #Actualizamos el sistema:
@@ -57,7 +55,7 @@ echo "deb http://deb.goaccess.io/ $(lsb_release -cs) main" | sudo tee -a /etc/ap
 
 #Añadimos clave publiaca en la maquina
 
-wget -O - https://deb.goaccess.io/gnugpg.key | sudo apt-key add -
+wget -O - https:/f/deb.goaccess.io/gnugpg.key | sudo apt-key add -
 
 # Actualizamos los repositorios
 
@@ -79,19 +77,15 @@ goaccess /var/log/apache2/access.log -o /var/www/html/stats/index.html --log-for
 
 #Control de acceso a un directorio con .htaccess
 #-----------------------------------------------------------
+
+
 #Creamos un directorio para guardar el archivo de claves
 mkdir -p /etc/apache2/claves
+
 #Creamos un usuario y contraseña en un archivo .htacces
 
 sudo htpasswd -bc /etc/apache2/claves/.htpasswd $STATS_USER $STATS_PASSWORD
 
-#Usuario 1
-
-#sudo htpasswd -c /home/usuario/.htpasswd andres andres
-
-#Copiamos el archivo de configuración de Apache
-
-#cp ../conf/000-default.conf /etc/apache2/sites-available
 
 #Reiniciamos el servicio de Apache
 
@@ -102,9 +96,11 @@ systemctl restart apache2
  
 #------------------------------------------
 #Copiamos el archivo htacces en /var/www/html/stats
-cp ../htaccess/htaccess /var/html/stats/.htaccess
+
+cp ../htaccess/.htaccess /var/www/html/stats/.htaccess
+
 #Copiamos el archivo de la configuración de Apache
-cp ../conf/000-default-htaccess.conf /etc/apache2/sites-avariable/000-default.conf
+cp ../conf/000-default.conf /etc/apache2/sites-available/000-default.conf
 
 #Reiniciamos el servicio de Apache
 
